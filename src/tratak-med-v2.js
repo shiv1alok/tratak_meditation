@@ -6,7 +6,7 @@ export default function TratakMeditationApp() {
   const [audioFile, setAudioFile] = useState(null);
   const [duration, setDuration] = useState(0);
   const [currentTime, setCurrentTime] = useState(0);
-  const [sessionTime, setSessionTime] = useState(0);
+  const [_sessionTime, setSessionTime] = useState(0);
   const [isSessionActive, setIsSessionActive] = useState(false);
   const [showControls, setShowControls] = useState(false);
   const [flameOffset, setFlameOffset] = useState(0);
