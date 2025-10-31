@@ -6,7 +6,7 @@ export default function TratakMeditationApp() {
   const [audioFile, setAudioFile] = useState(null);
   const [duration, setDuration] = useState(0);
   const [currentTime, setCurrentTime] = useState(0);
-  const [_sessionTime, setSessionTime] = useState(0);
+  const [sessionTime, setSessionTime] = useState(0);
   const [isSessionActive, setIsSessionActive] = useState(false);
   const [showControls, setShowControls] = useState(false);
   const [flameOffset, setFlameOffset] = useState(0);
@@ -308,7 +308,29 @@ export default function TratakMeditationApp() {
               <X size={24} />
             </button>
           )}
-
+          {/* Session Timer - shows on mouse move */}
+          {showControls && (
+            <div
+              style={{
+                position: 'fixed',
+                top: '20px',
+                left: '20px',
+                padding: '10px 20px',
+                borderRadius: '25px',
+                backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                backdropFilter: 'blur(10px)',
+                border: '1px solid rgba(255, 255, 255, 0.2)',
+                color: 'white',
+                fontSize: '20px',
+                fontFamily: 'sans-serif',
+                fontWeight: '300',
+                transition: 'all 0.3s ease',
+                zIndex: 1000
+              }}
+            >
+              {formatTime(sessionTime)}
+            </div>
+          )}
           <style>{`
             @keyframes glow {
               0%, 100% { opacity: 0.8; transform: translateX(-50%) scale(1); }
